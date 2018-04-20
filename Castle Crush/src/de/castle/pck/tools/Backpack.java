@@ -48,6 +48,7 @@ public class Backpack implements Listener {
 
 	@EventHandler
 	public void onPlayerClicks(PlayerInteractEvent click) {
+		
 		Player player = click.getPlayer();
 		ItemStack item = click.getItem();
 
@@ -59,8 +60,8 @@ public class Backpack implements Listener {
 			if (item != null && item.equals(backpack)) {
 
 				Inventory inv =	Bukkit.createInventory(player, 9*4, "backpack");
-				player.openInventory(inv);
-
+				player.openInventory(inv);	
+				
 				
 				
 			}
