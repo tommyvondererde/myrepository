@@ -1,0 +1,7 @@
+name: CastleCrush
+version: 1.0
+main: de.castle.pck.main.Main
+
+commands:
+   class:
+      description: gives player a class with special abilities!
