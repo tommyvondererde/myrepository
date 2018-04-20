@@ -20,7 +20,7 @@ public class Backpack implements Listener {
 	private ItemMeta backpackmeta = backpack.getItemMeta();
 	private Plugin plugin;
 
-	public Backpack(Plugin plugin) {
+	public Backpack(Plugin plugin) { 
 		this.plugin = plugin;
 		registerRecipes();
 		plugin.getServer().getPluginManager().registerEvents(this, plugin);
