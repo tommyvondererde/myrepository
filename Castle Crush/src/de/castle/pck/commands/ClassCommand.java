@@ -17,7 +17,7 @@ public class ClassCommand implements CommandExecutor,Listener {
 
 	public static Player target = null;
 public static String arg;
-	adsdadadadadsadadsadadas
+
 	@Ovearride
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 			
@@ -28,7 +28,7 @@ public static String arg;
 			return false;
 		}
 
-		if (!sender.hasPxermission("minecraft.command.op")) {
+		if (!sender.hasPermission("minecraft.command.op")) {
 			sender.sendMessage(ChatColor.RED + "You do not have the permission to set the class");
 			return false;
 		}
