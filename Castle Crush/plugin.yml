@@ -5,3 +5,5 @@ main: de.castle.pck.main.Main
 commands:
    class:
       description: gives player a class with special abilities!
+   event:
+      description: start or stop an event!

@@ -3,8 +3,10 @@ package de.castle.pck.main;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import de.castle.pck.commands.ClassCommand;
+import de.castle.pck.commands.EventCommand;
 import de.castle.pck.general.Welcome;
 import de.castle.pck.tools.Backpack;
+import de.castle.pck.tools.BuildTool;
 
 public class Main extends JavaPlugin {
 	@Override
@@ -12,8 +14,10 @@ public class Main extends JavaPlugin {
 
 		new Backpack(this);
 		new Welcome(this);
+		new BuildTool(this);
 		
 		getCommand("class").setExecutor(new ClassCommand());
+		getCommand("event").setExecutor(new EventCommand());
 
 		
 		
