@@ -17,8 +17,8 @@ public class ClassCommand implements CommandExecutor,Listener {
 
 	public static Player target = null;
 public static String arg;
-	
-	@Override
+	adsdadadadadsadadsadadas
+	@Ovearride
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 			
 		
