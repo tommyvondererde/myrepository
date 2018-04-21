@@ -19,7 +19,7 @@ public class ClassCommand implements CommandExecutor,Listener {
 public static String arg;
 
 
-dddd
+dddds
 	@Ovearride
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 			
