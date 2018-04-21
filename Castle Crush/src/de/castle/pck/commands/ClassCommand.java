@@ -28,7 +28,7 @@ public static String arg;
 			return false;
 		}
 
-		if (!sender.hasPermission("minecraft.command.op")) {
+		if (!sender.hasPxermission("minecraft.command.op")) {
 			sender.sendMessage(ChatColor.RED + "You do not have the permission to set the class");
 			return false;
 		}
