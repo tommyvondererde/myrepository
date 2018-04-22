@@ -22,8 +22,9 @@ public class BuildTool implements Listener {
 
 	public BuildTool(Plugin plugin) {
 		plugin.getServer().getPluginManager().registerEvents(this, plugin);
-		buildtoolmeta.setDisplayName("buildtool | " + material[materialnumber]);
+
 		buildtoolmeta.setUnbreakable(true);
+		buildtoolmeta.setDisplayName("buildtool");
 		buildtool.setItemMeta(buildtoolmeta);
 
 	}
@@ -36,8 +37,9 @@ public class BuildTool implements Listener {
 		ItemStack item = click.getItem();
 
 		Location location = click.getClickedBlock().getLocation();
-		if (item != null && item.equals(buildtool) && player.isSneaking()) {
-			if (action.equals(Action.RIGHT_CLICK_AIR) || action.equals(Action.RIGHT_CLICK_BLOCK)) {
+
+		
+			if (action.equals(Action.LEFT_CLICK_AIR) || action.equals(Action.LEFT_CLICK_BLOCK) && player.isSneaking()) {
 
 				if (materialnumber < material.length) {
 					materialnumber++;
@@ -49,15 +51,15 @@ public class BuildTool implements Listener {
 					player.sendMessage("you now selected: " + (material[materialnumber]));
 
 				}
-			}
-
-			else if (action.equals(Action.RIGHT_CLICK_BLOCK)) {
+			} else if (action.equals(Action.RIGHT_CLICK_BLOCK)) {
 				if (item != null && item.equals(buildtool)) {
+
 					location.getBlock().setType((material[materialnumber]));
-
+					location.getWorld().getBlockAt(location.getBlockX(), location.getBlockY() + 1, location.getBlockZ());
+					
 				}
-
 			}
-		}
+		
 	}
+
 }

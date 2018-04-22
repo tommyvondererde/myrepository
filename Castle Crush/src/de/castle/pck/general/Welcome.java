@@ -19,8 +19,8 @@ public class Welcome implements Listener {
 		Player player = joinevent.getPlayer();
 
 		player.sendMessage(ChatColor.AQUA + "Welcome to this server");
-		player.sendMessage(ChatColor.YELLOW + "you currently have" + null + "coind");
-		joinevent.setJoinMessage(ChatColor.GREEN + "player" + player + "has joined");
+		player.sendMessage(ChatColor.YELLOW + "you currently have " + null + " coind");
+		joinevent.setJoinMessage(ChatColor.GREEN + "player " + player.getName() + " has joined");
 		
 		// hier regeln einfügen
 

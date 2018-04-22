@@ -19,8 +19,8 @@ public class ClassCommand implements CommandExecutor,Listener {
 public static String arg;
 
 
-dddds
-	@Ovearride
+
+	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 			
 		
