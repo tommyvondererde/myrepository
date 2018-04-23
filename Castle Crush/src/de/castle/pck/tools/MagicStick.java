@@ -17,13 +17,9 @@ public class MagicStick implements Listener {
 
 	public static ItemStack magicstick = new ItemStack(Material.STICK);
 	private ItemMeta magicstickmeta = magicstick.getItemMeta();
-	
-	
-	
-	
+
 	public MagicStick(Plugin plugin) {
 
-		
 		magicstickmeta.setDisplayName("magicstick");
 		magicstick.setItemMeta(magicstickmeta);
 		plugin.getServer().getPluginManager().registerEvents(this, plugin);
@@ -35,8 +31,7 @@ public class MagicStick implements Listener {
 	public void onInteract(PlayerInteractEvent e) {
 		Player p = e.getPlayer();
 		ItemStack item = p.getInventory().getItemInOffHand(); // Item aus dem Inventar
-	
-		
+
 		Block block = p.getTargetBlock((HashSet<Byte>) null, 250);
 
 		if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
@@ -44,17 +39,17 @@ public class MagicStick implements Listener {
 					&& p.getInventory().getItemInOffHand() != null
 					&& p.getInventory().getItemInOffHand().getType() == Material.BONE) {
 
-			}
-			if (p.getInventory().getItemInOffHand().getAmount() == 1) {
-				p.getWorld().strikeLightning(block.getLocation());
+				if (p.getInventory().getItemInOffHand().getAmount() == 1) {
+					p.getWorld().strikeLightning(block.getLocation());
 
-			} else {
-				item.setAmount(item.getAmount() - 1);
-				System.out.println("ik bin ein berliner");
-				p.getWorld().strikeLightning(block.getLocation());
-				return;
-			}
+				} else {
+					item.setAmount(item.getAmount() - 1);
+					System.out.println("ik bin ein berliner");
+					p.getWorld().strikeLightning(block.getLocation());
+					return;
+				}
 
+			}
 		}
 	}
 
