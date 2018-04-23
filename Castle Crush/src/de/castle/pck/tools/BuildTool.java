@@ -38,16 +38,21 @@ public class BuildTool implements Listener {
 
 		Location location = click.getClickedBlock().getLocation();
 
-		
+		if (null == null) {
 			if (action.equals(Action.LEFT_CLICK_AIR) || action.equals(Action.LEFT_CLICK_BLOCK) && player.isSneaking()) {
+				if (item != null && item.equals(buildtool)) {
 
-				if (materialnumber < material.length) {
-					materialnumber++;
+					if (materialnumber < material.length) {
+						materialnumber++;
 
-					player.sendMessage("you now selected: " + (material[materialnumber]));
-				} else if (materialnumber >= material.length) {
+						player.sendMessage("you now selected: " + (material[materialnumber]));
+					} else if (materialnumber >= material.length) {
 
-					materialnumber = 0;
+						materialnumber = 0;
+						player.sendMessage("you now selected: " + (material[materialnumber]));
+
+					}
+
 					player.sendMessage("you now selected: " + (material[materialnumber]));
 
 				}
@@ -55,11 +60,11 @@ public class BuildTool implements Listener {
 				if (item != null && item.equals(buildtool)) {
 
 					location.getBlock().setType((material[materialnumber]));
-					location.getWorld().getBlockAt(location.getBlockX(), location.getBlockY() + 1, location.getBlockZ());
-					
-				}
-			}
-		
-	}
 
+				}
+
+			}
+
+		}
+	}
 }
