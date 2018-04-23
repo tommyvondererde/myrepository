@@ -61,7 +61,7 @@ public class Backpack implements Listener {
 
 				Inventory inv =	Bukkit.createInventory(player, 9*4, "backpack");
 				player.openInventory(inv);	
-				
+				//lol
 				
 				
 			}
