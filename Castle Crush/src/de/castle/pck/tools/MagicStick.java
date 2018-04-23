@@ -14,40 +14,36 @@ import org.bukkit.plugin.Plugin;
 
 public class MagicStick implements Listener {
 
-	
-	public MagicStick (Plugin plugin) {
-		
+	public MagicStick(Plugin plugin) {
+
 		plugin.getServer().getPluginManager().registerEvents(this, plugin);
 
 	}
-	
-	
+
 	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onInteract(PlayerInteractEvent e) {
 		Player p = e.getPlayer();
 		ItemStack item = p.getInventory().getItemInOffHand(); // Item aus dem Inventar
 		Block block = p.getTargetBlock((HashSet<Byte>) null, 250);
-		
-		if(e.getAction()==Action.RIGHT_CLICK_AIR || e.getAction()==Action.RIGHT_CLICK_BLOCK) {
-			if(p.getItemInHand()!=null && p.getItemInHand().getType()==Material.STICK && p.getInventory().getItemInOffHand()!=null &&p.getInventory().getItemInOffHand().getType()==Material.BONE){
-				
-			}if (p.getInventory().getItemInOffHand().getAmount() == 1) {
-				p.getWorld().strikeLightning(block.getLocation());
-				
-				
-			
-			}else
-			item.setAmount(item.getAmount() -0);
-			System.out.println("ik bin ein berliner");
-			p.getWorld().strikeLightning(block.getLocation());
-			return;
-			
-			
-			}
-		}
-				
-	}
-	
-	
 
+		if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
+			if (p.getItemInHand() != null && p.getItemInHand().getType() == Material.STICK
+					&& p.getInventory().getItemInOffHand() != null
+					&& p.getInventory().getItemInOffHand().getType() == Material.BONE) {
+
+			}
+			if (p.getInventory().getItemInOffHand().getAmount() == 1) {
+				p.getWorld().strikeLightning(block.getLocation());
+
+			} else {
+				item.setAmount(item.getAmount() - 0);
+				System.out.println("ik bin ein berliner");
+				p.getWorld().strikeLightning(block.getLocation());
+				return;
+			}
+
+		}
+	}
+
+}
