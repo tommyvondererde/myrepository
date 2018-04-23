@@ -39,7 +39,7 @@ public class Backpack implements Listener {
 		backpackrecipe.setIngredient('G', Material.GOLD_INGOT);
 		backpackrecipe.setIngredient('W', Material.WOOL);
 		backpackrecipe.setIngredient('S', Material.STRING);
-
+//lol
 		Bukkit.addRecipe(backpackrecipe);
 
 		return false;
