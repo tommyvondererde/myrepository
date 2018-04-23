@@ -12,6 +12,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.inventory.Inventory;
 
 import de.castle.pck.tools.BuildTool;
+import de.castle.pck.tools.MagicStick;
 
 public class ClassCommand implements CommandExecutor,Listener {
 
@@ -49,6 +50,9 @@ public static String arg;
 		}
 
 		if (args[0].equals("mage")) {
+			
+			Inventory inv = target.getInventory();
+			inv.addItem(MagicStick.magicstick);
 
 		} else if (args[0].equals("knight")) {
 
