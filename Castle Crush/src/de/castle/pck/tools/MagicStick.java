@@ -10,10 +10,16 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.Plugin;
 
 public class MagicStick implements Listener {
 
 	
+	public MagicStick (Plugin plugin) {
+		
+		plugin.getServer().getPluginManager().registerEvents(this, plugin);
+
+	}
 	
 	
 	@SuppressWarnings("deprecation")
